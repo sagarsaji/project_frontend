@@ -10,6 +10,14 @@ import { SignupComponent } from './signup/signup.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { KitchenstaffDashboardComponent } from './kitchenstaff-dashboard/kitchenstaff-dashboard.component';
+import { CreateComponent } from './admin-dashboard/create/create.component';
+import { ListComponent } from './admin-dashboard/list/list.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { AddmenuComponent } from './admin-dashboard/addmenu/addmenu.component';
+import { AboutComponent } from './about/about.component';
+import { FooterComponent } from './footer/footer.component';
+import { MenuComponent } from './menu/menu.component';
+import { SpecificmenuComponent } from './admin-dashboard/specificmenu/specificmenu.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +26,15 @@ import { KitchenstaffDashboardComponent } from './kitchenstaff-dashboard/kitchen
     SignupComponent,
     AdminDashboardComponent,
     UserDashboardComponent,
-    KitchenstaffDashboardComponent
+    KitchenstaffDashboardComponent,
+    CreateComponent,
+    ListComponent,
+    NavbarComponent,
+    AddmenuComponent,
+    AboutComponent,
+    FooterComponent,
+    MenuComponent,
+    SpecificmenuComponent
   ],
   imports: [
     BrowserModule,

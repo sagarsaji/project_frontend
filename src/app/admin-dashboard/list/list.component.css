@@ -1,0 +1,19 @@
+.container {
+    margin: 2.5rem;
+    margin-top: 0.5rem;
+    /* margin-right: 600px; */
+    padding-left: 100px;
+  }
+  
+ 
+  
+  
+  
+  
+  
+  .overflow-hidden {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  

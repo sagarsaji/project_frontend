@@ -1,0 +1,39 @@
+<app-admin-dashboard></app-admin-dashboard>
+<div *ngIf="rest && rest.length" class="container">
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let restaurant of rest">
+        <div class="row align-items-center">
+          <div class="col-md-2">
+            <img src="{{restaurant.restPic}}" alt="image" class="rounded-circle" width="80" height="80">
+          </div>
+          <div class="col-md-3">
+            <div class="overflow-hidden">
+             <b>{{restaurant.restName}}</b> 
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="overflow-hidden">
+              {{restaurant.restAddress}}
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="overflow-hidden">
+              {{restaurant.restContact}}
+            </div>
+          </div>
+          <div class="col-md-2 d-flex justify-content-end" routerLink="/viewmenu">
+            <button class="btn btn-primary btn-sm" (click)="fetchSpecificRestaurantMenu(restaurant.restName)">
+              Menu
+            </button>
+            <button class="btn btn-secondary btn-sm" (click)="updateRest(restaurant.id)">
+              Update
+            </button>
+            <button class="btn btn-danger btn-sm" (click)="deleteRestaurant(restaurant.id)">
+              Remove
+            </button>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  

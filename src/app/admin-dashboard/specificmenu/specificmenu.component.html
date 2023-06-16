@@ -1,0 +1,35 @@
+<app-admin-dashboard></app-admin-dashboard>
+<div *ngIf="menu && menu.length" class="container">
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let menuItem of menu">
+      <div class="row align-items-center">
+        <div class="col-md-2">
+          <img src="{{menuItem.mpic}}" alt="image" class="rounded-circle" width="80" height="80">
+        </div>
+        <div class="col-md-3">
+          <div class="overflow-hidden">
+            <b>{{menuItem.mname}}</b>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="overflow-hidden">
+            {{menuItem.mprice}}
+          </div>
+        </div>
+        <div class="col-md-3">
+            <div class="overflow-hidden">
+              {{menuItem.restname}}
+            </div>
+          </div>
+        <!-- <div class="col-md-2 d-flex justify-content-end">
+          <button class="btn btn-secondary btn-sm" (click)="updateMenu(menuItem.mid)">
+            Update
+          </button>
+          <button class="btn btn-danger btn-sm" (click)="deleteMenu(menuItem.mid)">
+            Remove
+          </button>
+        </div> -->
+      </div>
+    </li>
+  </ul>
+</div>
