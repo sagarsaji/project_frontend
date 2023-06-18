@@ -10,6 +10,8 @@ import { Signup } from '../modal/signup';
 })
 export class AuthenticateServiceService {
 
+  private authenticated: boolean = false;
+
   addUser(signup: Signup): Observable<Signup> {
     return this.httpClient.post<Signup>('http://localhost:8088/api/user/register', signup);
   }
@@ -22,7 +24,7 @@ export class AuthenticateServiceService {
     console.log(userr.username);
     console.log(userr.password);
     console.log(userr.type);
-
+    this.authenticated = true;
     return this.httpClient.post<any>(`http://localhost:8088/api/users/login`, userr, { headers: new HttpHeaders().set('responseType', 'text') }).pipe(
       map(
         userData => {
@@ -34,6 +36,10 @@ export class AuthenticateServiceService {
         }
       )
     );
+  }
+
+  isAuthenticated():boolean{
+    return this.authenticated;
   }
 
   setBearerToken(token: string) {

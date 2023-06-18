@@ -41,11 +41,13 @@ export class LoginComponent implements OnInit {
 
     this.authservice.getusers(this.login).subscribe((data) => {
       this.authservice.setBearerToken(data['token']);
+      
       console.log(data);
 
       if (data != null) {
         sessionStorage.setItem("key", this.submitMessage);
         this.flag = true;
+
 
         if (this.login.type == 'user') {
           console.log("user");

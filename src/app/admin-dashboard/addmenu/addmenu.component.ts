@@ -21,7 +21,7 @@ export class AddmenuComponent {
   restname: Restaurant[]=[];
 
   constructor(private restService:RestaurantService,
-    private router: Router,private formBuilder: FormBuilder,){}
+    private router: Router,private formBuilder: FormBuilder){}
 
     ngOnInit():void{
       this.getProductall();

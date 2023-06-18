@@ -13,16 +13,14 @@ export class SpecificmenuComponent implements OnInit {
   menu: Menu[] = [];
 rest:Restaurant[]=[];
 restn:string='';
+restname:string = '';
   constructor(private restService: RestaurantService, private router: Router,
     private route:ActivatedRoute) {}
 
   ngOnInit(): void {
-   // var restname =this.restName;
    this.restn=this.route.snapshot.params['restname'];
-    const restname = this.restn;
-    
-     // Replace with the actual restaurant name
-    this.fetchSpecificRestaurantMenu(restname);
+    this.restname = this.restn;
+    this.fetchSpecificRestaurantMenu(this.restname);
   }
 
   fetchSpecificRestaurantMenu(restname: string): void {
@@ -30,6 +28,17 @@ restn:string='';
       this.menu = data.filter(menuItem => menuItem.restname === restname);
       console.log(this.menu);
     });
+  }
+
+  deleteRestaurant(id: number){
+    this.restService.deleteRest(id).subscribe( data => {
+      console.log(data);
+      this.fetchSpecificRestaurantMenu(this.restname);
+    })
+  }
+
+  updateRest(id:number){
+    this.router.navigate(['menuupdate', id]);
   }
 }
 

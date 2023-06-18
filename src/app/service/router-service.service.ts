@@ -20,7 +20,7 @@ export class RouterServiceService {
     this.router.navigate(['/user']);
   }
   toadmin(){
-    this.router.navigate(['/admin']);
+    this.router.navigate(['/product']);
   }
   tokitchen(){
     this.router.navigate(['/kitchen']);

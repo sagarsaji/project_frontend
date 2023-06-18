@@ -18,6 +18,10 @@ import { AboutComponent } from './about/about.component';
 import { FooterComponent } from './footer/footer.component';
 import { MenuComponent } from './menu/menu.component';
 import { SpecificmenuComponent } from './admin-dashboard/specificmenu/specificmenu.component';
+import { AddtocartComponent } from './addtocart/addtocart.component';
+import { UpdateComponent } from './admin-dashboard/update/update.component';
+import { AddkitchenstaffComponent } from './admin-dashboard/addkitchenstaff/addkitchenstaff.component';
+import { MenuupdateComponent } from './admin-dashboard/menuupdate/menuupdate.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +38,11 @@ import { SpecificmenuComponent } from './admin-dashboard/specificmenu/specificme
     AboutComponent,
     FooterComponent,
     MenuComponent,
-    SpecificmenuComponent
+    SpecificmenuComponent,
+    AddtocartComponent,
+    UpdateComponent,
+    AddkitchenstaffComponent,
+    MenuupdateComponent
   ],
   imports: [
     BrowserModule,

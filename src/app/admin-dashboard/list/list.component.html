@@ -1,39 +1,50 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 <app-admin-dashboard></app-admin-dashboard>
-<div *ngIf="rest && rest.length" class="container">
-    <ul class="list-group">
-      <li class="list-group-item" *ngFor="let restaurant of rest">
-        <div class="row align-items-center">
-          <div class="col-md-2">
-            <img src="{{restaurant.restPic}}" alt="image" class="rounded-circle" width="80" height="80">
-          </div>
-          <div class="col-md-3">
-            <div class="overflow-hidden">
-             <b>{{restaurant.restName}}</b> 
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="overflow-hidden">
-              {{restaurant.restAddress}}
-            </div>
-          </div>
-          <div class="col-md-2">
-            <div class="overflow-hidden">
-              {{restaurant.restContact}}
-            </div>
-          </div>
-          <div class="col-md-2 d-flex justify-content-end" routerLink="/viewmenu">
-            <button class="btn btn-primary btn-sm" (click)="fetchSpecificRestaurantMenu(restaurant.restName)">
-              Menu
-            </button>
-            <button class="btn btn-secondary btn-sm" (click)="updateRest(restaurant.id)">
-              Update
-            </button>
-            <button class="btn btn-danger btn-sm" (click)="deleteRestaurant(restaurant.id)">
-              Remove
-            </button>
-          </div>
-        </div>
-      </li>
-    </ul>
-  </div>
+  <body>
+    <main class="table">
+      <section class="table__header">
+          <h1>Restaurant</h1>
+         
+        
+      </section>
+      <section class="table__body" *ngIf="rest && rest.length">
+          <table>
+              <thead>
+                  <tr>
+                      <th>   </th>
+                      <th>Name </th>
+                      <th> Location </th>
+                      <th> Contact </th>
+                      <th> Menu</th>
+                      <th> Changes </th>
+                     <td></td>
+              
+                    </tr>
+              </thead>
+              <tbody *ngFor="let restaurant of rest">
+                  <tr>
+                     
+                      <td> <img src="{{restaurant.restPic}}" alt=""></td>
+                      <td>{{restaurant.restName}}</td>
+                      <td>
+                        <p>{{restaurant.restAddress}}</p></td>
+                      <td> {{restaurant.restContact}} </td>
+                      <td>
+                        <button type="button" class="btn_1" routerLink="/viewmenu" (click)="fetchSpecificRestaurantMenu(restaurant.restName)">Menu</button>
+                      </td>
+                      <td colspan="2">
+                        <button class="edit-button" routerLink="/update" (click) = "updateRest(restaurant.id)">
+                          <i class="fas fa-pencil-alt"></i> 
+                        </button>
+                        <button class="delete-button" (click) = "deleteRestaurant(restaurant.id)" routerLink="/delete">
+                          <i class="fas fa-trash"></i> 
+                        </button>
+                      </td>
+                  </tr>
+              </tbody>
+          </table>
+      </section>
+  </main>
+  
+  </body>
   

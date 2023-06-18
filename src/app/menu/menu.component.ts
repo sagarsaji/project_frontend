@@ -24,6 +24,17 @@ export class MenuComponent implements OnInit{
         this.menu = data;
       });
   }
+
+  deleteRestaurant(id: number){
+    this.restService.deleteMenu(id).subscribe( data => {
+      console.log(data);
+      this.fetchRestaurantMenu();
+    })
+  }
+
+  updateRest(id:number){
+    this.router.navigate(['menuupdate', id]);
+  }
  
   
 
